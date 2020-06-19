@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from 'config/database.configuration';
 import { User } from 'entities/user.entity';
 import { UserService } from './services/user/user.service';
+import { Client } from 'entities/client.entity';
 import { ClientService } from './services/client/client.service';
 
 
@@ -16,11 +17,11 @@ import { ClientService } from './services/client/client.service';
       username: DatabaseConfiguration.username,
       password: DatabaseConfiguration.password,
       database: DatabaseConfiguration.database,
-      entities: [ User ]
+      entities: [ User, Client ]
     }),
-    TypeOrmModule.forFeature([ User ])
+    TypeOrmModule.forFeature([ User, Client ])
   ],
   controllers: [AppController],
-  providers: [UserService, ClientService],
+  providers: [UserService,ClientService],
 })
 export class AppModule {}

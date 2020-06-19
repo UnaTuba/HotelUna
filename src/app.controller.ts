@@ -24,7 +24,7 @@ export class AppController {
     return this.clientService.getAll();
   }
   @Get('api/user') // http://localhost:3000/api/clientuser
-  getAllUsers(): Promise<Client[]> {
-    return this.clientService.getAll();
+  getAllUsers(): Promise<User[]> {
+    return this.userService.getAll();
   }
 }
