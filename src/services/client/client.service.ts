@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Client } from 'entities/client.entity';
 import { Repository } from 'typeorm';
+import { Client } from '../../../entities/client.entity';
 @Injectable()
 export class ClientService {
     constructor(
@@ -16,4 +16,8 @@ export class ClientService {
     getById(id: number): Promise<Client> {
         return this.client.findOne(id);
     }
+
+    //add
+    //editById
+    //deleteById
 }

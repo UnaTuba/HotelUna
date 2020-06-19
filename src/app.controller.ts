@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
-import { User } from 'entities/user.entity';
 import { UserService } from './services/user/user.service';
-import { Client } from 'entities/client.entity';
 import { ClientService } from './services/client/client.service';
+import { Client } from '../entities/client.entity';
+import { User } from '../entities/user.entity';
 
 @Controller()
 export class AppController {
