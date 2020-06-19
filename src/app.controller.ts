@@ -1,11 +1,14 @@
 import { Controller, Get } from '@nestjs/common';
 import { User } from 'entities/user.entity';
 import { UserService } from './services/user/user.service';
+import { Client } from 'entities/client.entity';
+import { ClientService } from './services/client/client.service';
 
 @Controller()
 export class AppController {
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private clientService: ClientService
   ){}
 
   @Get() // http://localhost:3000/
@@ -17,8 +20,8 @@ export class AppController {
     return 'World';
   }
 
-  @Get('api/users') // http://localhost:3000/api/users
-  getAllUsers(): Promise<User[]> {
-    return this.userService.getAll();
+  @Get('api/client') // http://localhost:3000/api/client
+  getAllUsers(): Promise<Client[]> {
+    return this.clientService.getAll();
   }
 }
