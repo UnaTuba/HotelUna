@@ -19,8 +19,11 @@ export class AppController {
   getWorld(): string {
     return 'World';
   }
-
   @Get('api/client') // http://localhost:3000/api/client
+  getAllClients(): Promise<Client[]> {
+    return this.clientService.getAll();
+  }
+  @Get('api/user') // http://localhost:3000/api/clientuser
   getAllUsers(): Promise<Client[]> {
     return this.clientService.getAll();
   }
