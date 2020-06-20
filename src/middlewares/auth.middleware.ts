@@ -32,15 +32,19 @@ export class AuthMiddleware implements NestMiddleware {
             throw new HttpException('Token not found',HttpStatus.UNAUTHORIZED);
         }
 
-        const user = await this.userService.getById(jwtData.userId);
-        if(!user){
-            throw new HttpException('Account not found',HttpStatus.UNAUTHORIZED);
-        }
+        //if (jwtData.role === "administrator"){
+            const user = await this.userService.getById(jwtData.userId);
+            if(!user){
+                throw new HttpException('Account not found',HttpStatus.UNAUTHORIZED);
+            }
+        //}
 
         const trenutniTimestamp = new Date().getTime() / 1000; // ms/1000 = sec
         if( trenutniTimestamp >=jwtData.ext){
             throw new HttpException('Account not found',HttpStatus.UNAUTHORIZED);
         }
+
+        req.token = jwtData;
 
         next();
     }

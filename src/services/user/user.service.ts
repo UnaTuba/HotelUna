@@ -67,7 +67,7 @@ export class UserService {
         newUser.email = data.email;
         newUser.phone = data.phone;
         newUser.username = data.username;
-
+        
         const passwordH = crypto.createHash('sha512');
         passwordH.update(data.password);
         const passwordHashString = passwordH.digest('hex').toUpperCase();

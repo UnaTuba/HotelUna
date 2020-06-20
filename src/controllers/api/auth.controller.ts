@@ -14,7 +14,7 @@ import { AddUserDto } from "src/dtos/user/add.user.dto";
 export class AuthController {
     constructor(public userService: UserService){    }
     
-    @Post('login')
+    @Post('user/login')
     async doLogin(@Body() data: LoginUserDto, @Req() req: Request): Promise<ApiResponse | LogInfoUserDto>{
         const user = await this.userService.getByUsername(data.username);
 
@@ -34,6 +34,7 @@ export class AuthController {
 
         // -- token creation
         const jwtData = new JwtDataUserDto();
+        jwtData.role = "user";
         jwtData.username = user.username;
         jwtData.userId = user.userId;
 
