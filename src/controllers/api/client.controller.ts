@@ -1,8 +1,10 @@
-import { Controller, Get, Param, Put, Body, Post } from "@nestjs/common";
+import { Controller, Get, Param, Put, Body, Post, UseGuards } from "@nestjs/common";
 import { ClientService } from "../../services/client/client.service";
 import { Client } from "../../../entities/client.entity";
 import { Crud } from "@nestjsx/crud";
 import { AddClientDto } from "src/dtos/client/add.client.dto";
+import { RoleCheckerGuard } from "src/misc/role.checker.guard";
+import { AllowToRoles } from "src/misc/allow.to.roles.descriptor";
 
 @Controller('api/client')
 @Crud({
@@ -21,6 +23,38 @@ import { AddClientDto } from "src/dtos/client/add.client.dto";
             rentables: {
                 eager: true
             }
+        }
+    },
+    routes: {
+        only: [
+            "createOneBase",
+            "createManyBase",
+            "getManyBase",
+            "getOneBase"
+        ],
+        createOneBase: {
+            decorators: [
+                UseGuards(RoleCheckerGuard),
+                AllowToRoles('user')
+            ]
+        },
+        createManyBase: {
+            decorators: [
+                UseGuards(RoleCheckerGuard),
+                AllowToRoles('user')
+            ]
+        },
+        getOneBase: {
+            decorators: [
+                UseGuards(RoleCheckerGuard),
+                AllowToRoles('user')
+            ]
+        },
+        getManyBase: {
+            decorators: [
+                UseGuards(RoleCheckerGuard),
+                AllowToRoles('user')
+            ]
         }
     }
 })
