@@ -10,7 +10,7 @@ import { RentableService } from "src/services/rentable/rentable.service";
     },
     params: {
         id: {
-            field: 'rentableId',
+            field: 'rentable_id',
             type: 'number',
             primary: true,
         }

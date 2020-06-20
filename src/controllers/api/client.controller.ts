@@ -11,7 +11,7 @@ import { AddClientDto } from "src/dtos/client/add.client.dto";
     },
     params: {
         id: {
-            field: 'clientId',
+            field: 'client_id',
             type: 'number',
             primary: true,
         }

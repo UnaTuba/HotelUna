@@ -10,7 +10,7 @@ import { RoomService } from "src/services/room/room.service";
     },
     params: {
         id: {
-            field: 'roomId',
+            field: 'room_id',
             type: 'number',
             primary: true,
         }

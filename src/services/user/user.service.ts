@@ -58,6 +58,33 @@ export class UserService {
         });
     }
 
+    async register(data: AddUserDto): Promise<User | ApiResponse>{
+        // DTO      => Model
+        // username -> username; itd
+        const newUser: User = new User();
+        newUser.forename = data.forename;
+        newUser.surname = data.surname;
+        newUser.email = data.email;
+        newUser.phone = data.phone;
+        newUser.username = data.username;
+
+        const passwordH = crypto.createHash('sha512');
+        passwordH.update(data.password);
+        const passwordHashString = passwordH.digest('hex').toUpperCase();
+        newUser.password = passwordHashString;
+
+        try {
+            const savedUser = await this.user.save(newUser);
+
+            if(!savedUser) {
+                throw new Error('');
+            }
+            return savedUser;
+        } catch (e){
+            return new ApiResponse('error',-6001,'This user account cannot be created');
+        }
+    }
+
     //editById
     async editById(id: number, data: EditUserDto): Promise<User | ApiResponse>{
         const newUser: User = await this.user.findOne(id);

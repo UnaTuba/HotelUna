@@ -10,7 +10,7 @@ import { ReservationService } from "src/services/reservation/reservation.service
     },
     params: {
         id: {
-            field: 'reservationId',
+            field: 'reservation_id',
             type: 'number',
             primary: true,
         }
