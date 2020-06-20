@@ -2,23 +2,22 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Client } from '../../../entities/client.entity';
-import { AddClientDto } from '../../dtos/client/add.client.dto';
+import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
+/*import { AddClientDto } from '../../dtos/client/add.client.dto';
 import { EditClientDto } from '../../dtos/client/edit.client.dto';
 import { ApiResponse } from 'src/controllers/misc/api.response.class';
-import { resolve } from 'dns';
-
+import { resolve } from 'dns';*/
 
 @Injectable()
-export class ClientService {
+export class ClientService extends TypeOrmCrudService<Client>{
     constructor(
-        @InjectRepository(Client) 
+        @InjectRepository(Client)
         private readonly client: Repository<Client>,
-    ) { }
-
-    getAll(): Promise<Client[]> {
-        return this.client.find();
+    ){
+            super(client);
     }
 
+/*
     getById(id: number): Promise<Client | ApiResponse> {
         return this.client.findOne(id);
     }
@@ -64,4 +63,5 @@ export class ClientService {
 
     }
     //deleteById
+    */
 }

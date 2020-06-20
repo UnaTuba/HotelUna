@@ -22,6 +22,9 @@ import { RentableService } from "src/services/rentable/rentable.service";
             },
             conferenceRoom: {
                 eager: true
+            },
+            clients: {
+                eager: true
             }
         }
     }

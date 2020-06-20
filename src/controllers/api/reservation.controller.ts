@@ -24,7 +24,7 @@ import { ReservationService } from "src/services/reservation/reservation.service
                 eager: false
             },
             client: {
-                eager: true
+                eager: false
             },
             room: {
                 eager: true

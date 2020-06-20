@@ -3,4 +3,8 @@ export class AddClientDto {
     surname: string;
     email: string;
     phone: string;
+    rentables: {
+        rentableId: number;
+        value: string;
+    }[];
 }

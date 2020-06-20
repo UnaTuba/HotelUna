@@ -1,16 +1,36 @@
 import { Controller, Get, Param, Put, Body, Post } from "@nestjs/common";
 import { ClientService } from "../../services/client/client.service";
 import { Client } from "../../../entities/client.entity";
-import { AddClientDto } from "../../dtos/client/add.client.dto";
-import { EditClientDto } from "../../dtos/client/edit.client.dto";
-import { ApiResponse } from "../misc/api.response.class";
+import { Crud } from "@nestjsx/crud";
+import { AddClientDto } from "src/dtos/client/add.client.dto";
 
 @Controller('api/client')
+@Crud({
+    model: {
+        type: Client
+    },
+    params: {
+        id: {
+            field: 'clientId',
+            type: 'number',
+            primary: true,
+        }
+    },
+    query: {
+        join: {
+            rentables: {
+                eager: true
+            }
+        }
+    }
+})
 export class ClientController {
-    constructor(
-        private clientService: ClientService
-      ){}
-
+    constructor(public service: ClientService){}
+    /*@Post('createFull')
+    createFullClient(@Body() data: AddClientDto){
+        return this.service.createFullClient(data);
+    }*/
+}/*
     @Get() //GET http://localhost:3000/api/client/
     getAll(): Promise<Client[]> {
         return this.clientService.getAll();
@@ -38,3 +58,4 @@ export class ClientController {
         return this.clientService.editById(clientId,data);
     }
 }
+*/

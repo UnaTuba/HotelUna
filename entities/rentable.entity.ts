@@ -4,10 +4,13 @@ import {
   OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { ConferenceRoom } from "./conferenceRoom.entity";
 import { Reservation } from "./reservation.entity";
 import { Room } from "./room.entity";
+import { Client } from "./client.entity";
 
 @Entity("rentable")
 export class Rentable {
@@ -28,6 +31,15 @@ export class Rentable {
 
   @OneToMany(() => Reservation, (reservation) => reservation.rentable)
   reservations: Reservation[];
+
+  @ManyToMany(type => Client, client => client.rentables)
+  @JoinTable({
+    name: "reservation",
+    joinColumn: { name: "rentable_id",referencedColumnName: "rentableId" },
+    inverseJoinColumn: {name: "client_id",referencedColumnName: "clientId"}
+  })
+  clients: Client[] 
+
 
   @OneToOne(() => Room, (room) => room.rentable)
   room: Room;

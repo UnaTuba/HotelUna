@@ -19,6 +19,15 @@ export class UserService {
         return this.user.find();
     }
 
+    async getByUsername(username: string): Promise<User | null> {
+        const user = await this.user.findOne({username: username});
+
+        if(user){
+            return user;
+        }
+        return null;
+    }
+
     getById(id: number): Promise<User | ApiResponse> {
         return this.user.findOne(id);
     }
@@ -36,7 +45,8 @@ export class UserService {
 
         const passwordHash = crypto.createHash('sha512');
         passwordHash.update(data.password);
-        newUser.password = data.password;
+        const passwordHashString = passwordHash.digest('hex').toUpperCase();
+        newUser.password = passwordHashString;
 
         return new Promise((resolve) =>{
             this.user.save(newUser)
