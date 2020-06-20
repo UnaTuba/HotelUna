@@ -3,7 +3,7 @@ import { UserService } from "src/services/user/user.service";
 import { LoginUserDto } from "src/dtos/user/login.user.dto";
 import { ApiResponse } from "../misc/api.response.class";
 import * as crypto from "crypto";
-import { LogInfoUserDto } from "src/dtos/user/login.info.user.dto";
+import { LoginInfoUserDto } from "src/dtos/auth/login.info.user.dto";
 import * as jwt from 'jsonwebtoken';
 import { JwtDataUserDto } from "src/dtos/user/jwt.data.user.dto";
 import { Request } from "express";
@@ -15,7 +15,7 @@ export class AuthController {
     constructor(public userService: UserService){    }
     
     @Post('user/login')
-    async doLogin(@Body() data: LoginUserDto, @Req() req: Request): Promise<ApiResponse | LogInfoUserDto>{
+    async doLogin(@Body() data: LoginUserDto, @Req() req: Request): Promise<ApiResponse | LoginInfoUserDto>{
         const user = await this.userService.getByUsername(data.username);
 
         if(!user){
@@ -48,7 +48,7 @@ export class AuthController {
         const token: string = jwt.sign(jwtData.toPlainObject(), jwtSecret);
         // --
 
-        const responseObject = new LogInfoUserDto(
+        const responseObject = new LoginInfoUserDto(
             user.userId,
             user.username,
             token

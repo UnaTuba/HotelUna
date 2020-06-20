@@ -40,6 +40,7 @@ export class UserService {
         newUser.forename = data.forename;
         newUser.surname = data.surname;
         newUser.email = data.email;
+        newUser.address = data.address;
         newUser.phone = data.phone;
         newUser.username = data.username;
 
