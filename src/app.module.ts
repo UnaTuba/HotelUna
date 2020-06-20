@@ -11,6 +11,13 @@ import { User } from '../entities/user.entity';
 import { Client } from '../entities/client.entity';
 import { DatabaseConfiguration } from '../config/database.configuration';
 import { ClientController } from './controllers/api/client.controller';
+import { RoomController } from './controllers/api/room.controller';
+import { RoomService } from './services/room/room.service';
+import { RentableService } from './services/rentable/rentable.service';
+import { RentableController } from './controllers/api/rentable.controller';
+import { ReservationController } from './controllers/api/reservation.controller';
+import { ReservationService } from './services/reservation/reservation.service';
+import { UserController } from './controllers/api/user.controller';
 
 
 @Module({
@@ -31,12 +38,28 @@ import { ClientController } from './controllers/api/client.controller';
         Reservation, 
       ]
     }),
-    TypeOrmModule.forFeature([ Client,User ])
+    TypeOrmModule.forFeature([ 
+      Client,
+      User,
+      Room, 
+      Rentable,
+      Reservation,
+    ])
   ],
   controllers: [
     AppController,
     ClientController,
+    RoomController,
+    RentableController,
+    ReservationController,
+    UserController,
   ],
-  providers: [ClientService,UserService],
+  providers: [
+    ClientService,
+    UserService,
+    RoomService,
+    RentableService,
+    ReservationService,
+  ],
 })
 export class AppModule {}

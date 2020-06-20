@@ -5,6 +5,8 @@ import {
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { Client } from "./client.entity";
 import { Rentable } from "./rentable.entity";
@@ -17,10 +19,10 @@ import { User } from "./user.entity";
 export class Reservation {
   @PrimaryGeneratedColumn({
     type: "int",
-    name: "room_reservation_id",
+    name: "reservation_id",
     unsigned: true,
   })
-  roomReservationId: number;
+  reservationId: number;
 
   @Column( { type: "int", name: "client_id", unsigned: true })
   clientId: number;
