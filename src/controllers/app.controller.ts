@@ -13,8 +13,4 @@ export class AppController {
   getIndex(): string {
     return 'Home page!';
   }
-  @Get('world') // http://localhost:3000/world
-  getWorld(): string {
-    return 'World';
-  }
 }

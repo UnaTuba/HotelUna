@@ -26,7 +26,7 @@ import { AllowToRoles } from "src/misc/allow.to.roles.descriptor";
                 eager: true
             },
             clients: {
-                eager: true
+                eager: false
             }
         }
     },

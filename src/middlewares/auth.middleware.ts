@@ -41,7 +41,7 @@ export class AuthMiddleware implements NestMiddleware {
 
         const trenutniTimestamp = new Date().getTime() / 1000; // ms/1000 = sec
         if( trenutniTimestamp >=jwtData.ext){
-            throw new HttpException('Account not found',HttpStatus.UNAUTHORIZED);
+            throw new HttpException('Token expired',HttpStatus.UNAUTHORIZED);
         }
 
         req.token = jwtData;
