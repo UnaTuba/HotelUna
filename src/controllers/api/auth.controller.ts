@@ -15,7 +15,7 @@ export class AuthController {
     constructor(public userService: UserService){    }
     
     @Post('user/login')
-    async doLogin(@Body() data: LoginUserDto, @Req() req: Request): Promise<ApiResponse | LoginInfoUserDto>{
+    async doLogin(@Body() data: LoginUserDto, @Req() req: Request): Promise<LoginInfoUserDto | ApiResponse>{
         const user = await this.userService.getByUsername(data.username);
 
         if(!user){
@@ -53,7 +53,8 @@ export class AuthController {
             user.username,
             token
         );
-
+        
+  
         return new Promise(resolve => resolve(responseObject));
     }
 

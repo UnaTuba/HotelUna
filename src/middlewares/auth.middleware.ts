@@ -7,10 +7,10 @@ import { jwtSecret } from "config/jwt.secret";
 
 @Injectable()
 export class AuthMiddleware implements NestMiddleware {
-    constructor( private readonly userService: UserService){}
+    constructor( public userService: UserService){}
 
     async use(req: Request, res: Response, next: NextFunction) {
-        req.headers.authorization
+        //req.headers.authorization
         if(!req.headers.authorization){
             throw new HttpException('Token not found',HttpStatus.UNAUTHORIZED);
         }
@@ -20,24 +20,30 @@ export class AuthMiddleware implements NestMiddleware {
             throw new HttpException('Token not found',HttpStatus.UNAUTHORIZED);
         }
         const token = tokenParts[1];
-        const jwtData: JwtDataUserDto = jwt.verify(token,jwtSecret);
+        let jwtData: JwtDataUserDto;
+        
+        try {
+            jwtData = jwt.verify(token, jwtSecret);
+        } catch (e) {
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
+        }
         if(!jwtData){
             throw new HttpException('Token not found',HttpStatus.UNAUTHORIZED);
         }
 
         if(jwtData.ip !== req.ip.toString()){
-            throw new HttpException('Token not found',HttpStatus.UNAUTHORIZED);
+            throw new HttpException('Token not found, ip',HttpStatus.UNAUTHORIZED);
         }
         if(jwtData.ua !== req.headers["user-agent"]){
-            throw new HttpException('Token not found',HttpStatus.UNAUTHORIZED);
+            throw new HttpException('Token not found, ua',HttpStatus.UNAUTHORIZED);
         }
 
-        //if (jwtData.role === "administrator"){
+        if (jwtData.role === "user"){
             const user = await this.userService.getById(jwtData.userId);
             if(!user){
                 throw new HttpException('Account not found',HttpStatus.UNAUTHORIZED);
             }
-        //}
+        }
 
         const trenutniTimestamp = new Date().getTime() / 1000; // ms/1000 = sec
         if( trenutniTimestamp >=jwtData.ext){
