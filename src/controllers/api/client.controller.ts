@@ -60,6 +60,7 @@ import { AllowToRoles } from "src/misc/allow.to.roles.descriptor";
 })
 export class ClientController {
     constructor(public service: ClientService){}
+    
     /*@Post('createFull')
     createFullClient(@Body() data: AddClientDto){
         return this.service.createFullClient(data);

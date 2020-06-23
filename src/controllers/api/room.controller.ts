@@ -68,12 +68,12 @@ import { ApiResponse } from "../misc/api.response.class";
 })
 export class RoomController{
     constructor(public service: RoomService){ }
-/*
+
     @Post('search')
     @UseGuards(RoleCheckerGuard)
     @AllowToRoles('user')
-    async search(@Body() data: RoomDto): Promise<Room[] | ApiResponse> {
+    async search(@Body() data: RoomDto): Promise<Room | ApiResponse> {
         return await this.service.search(data);
     }
-    */
+    
 }

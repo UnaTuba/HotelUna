@@ -14,8 +14,8 @@ export class RoomService extends TypeOrmCrudService<Room>{
     ){
             super(room);
     }
-/*
-    async search(data: RoomDto): Promise<Room[] | ApiResponse> {
+
+    async search(data: RoomDto): Promise<Room | ApiResponse> {
         const builder = await this.room.createQueryBuilder("room");
 
         /*builder.innerJoinAndSelect(
@@ -23,13 +23,13 @@ export class RoomService extends TypeOrmCrudService<Room>{
             "ap",
             "ap.createdAt = (SELECT MAX(ap.created_at) FROM article_price AS ap WHERE ap.article_id = article.article_id)"
         );
+*/
+        builder.leftJoinAndSelect("room", "room.rentable");
+        //builder.leftJoinAndSelect("article.features", "features");
+        //builder.leftJoinAndSelect("article.photos", "photos");
 
-        builder.leftJoinAndSelect("article.articleFeatures", "af");
-        builder.leftJoinAndSelect("article.features", "features");
-        builder.leftJoinAndSelect("article.photos", "photos");
-
-        builder.where('article.categoryId = :catId', { catId: data.categoryId });
-
+        builder.where('room.rentableId = :rentableId', { rentableId: data.rentableId });
+/*
         if (data.keywords && data.keywords.length > 0) {
             builder.andWhere(`(
                                 article.name LIKE :kw OR
@@ -93,14 +93,14 @@ export class RoomService extends TypeOrmCrudService<Room>{
 
         builder.skip(page * perPage);
         builder.take(perPage);
+*/
+        const rooms = await builder.getOne();
 
-        let articles = await builder.getMany();
-
-        if (articles.length === 0) {
-            return new ApiResponse("ok", 0, "No articles found for these search parameters.");
+        if (rooms === undefined) {
+            return new ApiResponse("ok", 0, "No rooms found for these search parameters.");
         }
 
-        return articles;
+        return rooms;
     }
-*/
+
 }

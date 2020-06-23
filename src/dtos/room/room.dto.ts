@@ -9,4 +9,5 @@ export class RoomDto {
     desk: boolean;
     airConditioner: boolean;
     roomNumber: number;
+    rentableId: number;
 }
