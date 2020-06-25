@@ -76,11 +76,11 @@ export class RoomController{
     async search(@Body() data: RoomDto): Promise<Room | ApiResponse> {
         return await this.service.search(data);
     }
-/*
-    @Post('register') // POST http://localhost:3000/auth/room/register/
-    async userRegister(@Body() data: AddRoomDto) {
-        return await this.service.register(data);
+
+   @Post() // POST http://localhost:3000/auth/room
+    async add(@Body() data: AddRoomDto) {
+        return await this.service.add(data);
     }
-*/
+
     
 }

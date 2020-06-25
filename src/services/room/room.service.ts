@@ -6,9 +6,6 @@ import { Repository } from "typeorm";
 import { ApiResponse } from "src/controllers/misc/api.response.class";
 import { RoomDto } from "src/dtos/room/room.dto";
 import { AddRoomDto } from "src/dtos/room/add.room.dto";
-import { Rentable } from "entities/rentable.entity";
-import { RentableService } from "../rentable/rentable.service";
-import { RentableDto } from "src/dtos/rentables/rentable.dto";
 
 @Injectable()
 export class RoomService extends TypeOrmCrudService<Room>{
@@ -106,8 +103,8 @@ export class RoomService extends TypeOrmCrudService<Room>{
 
         return rooms;
     }
-/*
-    async register(data: AddRoomDto): Promise<Room | ApiResponse> {
+
+    async add(data: AddRoomDto): Promise<Room | ApiResponse> {
        
         const newRoom: Room = new Room();
         newRoom.numOfBeds = data.numOfBeds;
@@ -119,7 +116,7 @@ export class RoomService extends TypeOrmCrudService<Room>{
         newRoom.desk = data.desk;
         newRoom.airConditioner = data.airConditioner;
         newRoom.roomNumber = data.roomNumber;
-
+        newRoom.rentableId = data.rentableId;
         try {
             const savedRoom = await this.room.save(newRoom);
 
@@ -132,6 +129,6 @@ export class RoomService extends TypeOrmCrudService<Room>{
             return new ApiResponse('error', -6001, 'This room cannot be created.');
         }
     }
-    */
+    
 
 }

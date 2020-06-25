@@ -11,5 +11,6 @@ export class AddRoomDto {
     roomNumber: number;
     wifi: boolean;
     price: number;
-    maxCapacity: number
+    maxCapacity: number;
+    rentableId: number;
 }
