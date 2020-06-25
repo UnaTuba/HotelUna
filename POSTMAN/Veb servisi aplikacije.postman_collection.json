@@ -1,0 +1,1176 @@
+{
+	"info": {
+		"_postman_id": "c0299cc6-7faf-4488-a12f-8bedc4785f7b",
+		"name": "Veb servisi aplikacije",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Get all clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get all clients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/client/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "515"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"203-WkKylY7uuK4npr7WWBVz36K/gvU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 20:14:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"clientId\": 1,\n        \"forename\": \"Perislav\",\n        \"surname\": \"Perislavljevic\",\n        \"email\": \"pperisa@mail.rs\",\n        \"phone\": \"+381651234567\"\n    },\n    {\n        \"clientId\": 2,\n        \"forename\": \"Mina\",\n        \"surname\": \"Minic\",\n        \"email\": \"mminic@mojmail.com\",\n        \"phone\": \"+381112321320\"\n    },\n    {\n        \"clientId\": 3,\n        \"forename\": \"Bos\",\n        \"surname\": \"Gazdic\",\n        \"email\": \"gazda@mail.rs\",\n        \"phone\": \"+3812232324\"\n    },\n    {\n        \"clientId\": 4,\n        \"forename\": \"Mika\",\n        \"surname\": \"Biznisic\",\n        \"email\": \"mika@biznis.org\",\n        \"phone\": \"+385827315\"\n    },\n    {\n        \"clientId\": 5,\n        \"forename\": \"Zika\",\n        \"surname\": \"Mikic\",\n        \"email\": \"zikica@mail.es\",\n        \"phone\": \"+4072364859\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get one client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get one client",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/client/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"71-IjUstH++mDGX8yPRwkevIVzXHAA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 20:17:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"clientId\": 1,\n    \"forename\": \"Perislav\",\n    \"surname\": \"Perislavljevic\",\n    \"email\": \"pperisa@mail.rs\",\n    \"phone\": \"+381651234567\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a new client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forename\": \"Test\",\r\n    \"surname\": \"Testic\",\r\n    \"email\": \"test@testiic.rs\",\r\n    \"phone\": \"+22553362\"\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/client/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"client",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a new client",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"forename\": \"Test\",\r\n    \"surename\": \"Testic\",\r\n    \"email\": \"test@testiic.rs\",\r\n    \"phone\": \"+22553362\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/client/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "78"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e-dunceKru5LWTLnqxdqLea7lxeY0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 20:24:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"forename\": \"Test\",\n    \"email\": \"test@testiic.rs\",\n    \"phone\": \"+22553362\",\n    \"clientId\": 6\n}"
+						},
+						{
+							"name": "Add a new client",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"forename\": \"Vasa\",\r\n    \"surname\": \"Mravic\",\r\n    \"email\": \"vasa@testiic.rs\",\r\n    \"phone\": \"+323173812\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/client/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-t4k/9UI9MQaVcBQ68YkMUdFYBok\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 20:42:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1001,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit client by ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Testic\",\r\n    \"phone\": \"+123456\"\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/client/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"client",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit client by ID - SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"surname\": \"Testic\",\r\n    \"phone\": \"+123456\"\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/client/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										"6"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f-Ri3OFcXCUpOaZZ89yVDdfx65EMU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 20:46:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"clientId\": 6,\n    \"forename\": \"Test\",\n    \"surname\": \"Testic\",\n    \"email\": \"test@testiic.rs\",\n    \"phone\": \"+123456\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit non-existing client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Edit non-existing client - SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"surname\": \"Testic\",\r\n    \"phone\": \"+123456\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/client/20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										"20"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 20:54:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get non-existing client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get non-existing client - SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/client/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"client",
+										"100"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 19 Jun 2020 21:08:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Login - wrong password -SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin1\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-yGnd1fUn+KRemOJUJKfIJoExxS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 09:43:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3002,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Login - user not found SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-jVzHjGg0W81AgoBNOOnaoLkouLY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 09:42:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Register new user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Register new user - SUCCESS",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"forename\": \"Zivan\",\r\n    \"surname\": \"Test\",\r\n    \"email\": \"zivan@admin.rs\",\r\n    \"phone\": \"011343523\",\r\n    \"address\": \"Pejicevi Salasi Street 5\",\r\n    \"username\": \"zivan\",\r\n    \"password\": \"zivan\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"register"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12c-cOKQ5i2yKfiu/fyZt0SdTGsfEmE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 11:20:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"forename\": \"Zivan\",\n    \"surname\": \"Test\",\n    \"email\": \"zivan@admin.rs\",\n    \"phone\": \"011343523\",\n    \"username\": \"zivan\",\n    \"password\": \"C006E6E8F9B30B4DF5A11817A95097DCA7AD7BD8C7C6FA625B498BB4E143CF7A275B9A4E58CF3B3EFC928FC188923100C0D7015DA7D80A2C5CE764972F82BC59\",\n    \"userId\": 5,\n    \"registrationDate\": \"2020-06-20T11:20:40.000Z\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get all users - SUCCESS after authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsInVzZXJJZCI6NCwidXNlcm5hbWUiOiJhZG1pbiIsImV4dCI6MTU5Mzg4NzgzOC40NzQsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTI2NzgyMzh9.DWoSTchZfuHJTDLMuQpVtay0BWa1c7zkELB7dzAuUzg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1324"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52c-2CurTiHA+EhpxHUd9fBxCXZrMaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 18:39:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": 1,\n        \"forename\": \"Una\",\n        \"surname\": \"Tuba\",\n        \"address\": \"Moja ulica 178\",\n        \"phone\": \"011123456\",\n        \"email\": \"una@mail.rs\",\n        \"username\": \"utuba\",\n        \"password\": \"utuba\",\n        \"salt\": \"kgh\",\n        \"registrationDate\": \"2020-06-18T11:36:42.000Z\"\n    },\n    {\n        \"userId\": 2,\n        \"forename\": \"Pera\",\n        \"surname\": \"Peric\",\n        \"address\": \"Neka nepoznata ulica 28\",\n        \"phone\": \"+38165555444\",\n        \"email\": \"pperic@mail.com\",\n        \"username\": \"pperic\",\n        \"password\": \"pperic\",\n        \"salt\": \"hjk\",\n        \"registrationDate\": \"2020-06-18T12:54:59.000Z\"\n    },\n    {\n        \"userId\": 3,\n        \"forename\": \"Ana\",\n        \"surname\": \"Maric\",\n        \"address\": \"Studentska ulica 18\",\n        \"phone\": \"+381112345632\",\n        \"email\": \"amaric@mail.rs\",\n        \"username\": \"amaric\",\n        \"password\": \"amaric\",\n        \"salt\": \"jke\",\n        \"registrationDate\": \"2020-06-18T12:55:54.000Z\"\n    },\n    {\n        \"userId\": 4,\n        \"forename\": \"Admin\",\n        \"surname\": \"Admin\",\n        \"address\": \"\",\n        \"phone\": \"+ADMIN123\",\n        \"email\": \"admin@admin.rs\",\n        \"username\": \"admin\",\n        \"password\": \"C7AD44CBAD762A5DA0A452F9E854FDC1E0E7A52A38015F23F3EAB1D80B931DD472634DFAC71CD34EBC35D16AB7FB8A90C81F975113D6C7538DC69DD8DE9077EC\",\n        \"salt\": \"\",\n        \"registrationDate\": \"2020-06-20T09:41:31.000Z\"\n    },\n    {\n        \"userId\": 5,\n        \"forename\": \"Zivan\",\n        \"surname\": \"Test\",\n        \"address\": \"\",\n        \"phone\": \"011343523\",\n        \"email\": \"zivan@admin.rs\",\n        \"username\": \"zivan\",\n        \"password\": \"C006E6E8F9B30B4DF5A11817A95097DCA7AD7BD8C7C6FA625B498BB4E143CF7A275B9A4E58CF3B3EFC928FC188923100C0D7015DA7D80A2C5CE764972F82BC59\",\n        \"salt\": \"\",\n        \"registrationDate\": \"2020-06-20T11:20:40.000Z\"\n    }\n]"
+						},
+						{
+							"name": "Get all users - SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "675"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a3-pasYUm65OjacjtQwYPOnRcj04k4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 09:37:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": 1,\n        \"forename\": \"Una\",\n        \"surname\": \"Tuba\",\n        \"address\": \"Moja ulica 178\",\n        \"phone\": \"011123456\",\n        \"email\": \"una@mail.rs\",\n        \"username\": \"utuba\",\n        \"password\": \"utuba\",\n        \"salt\": \"kgh\",\n        \"registrationDate\": \"2020-06-18T11:36:42.000Z\"\n    },\n    {\n        \"userId\": 2,\n        \"forename\": \"Pera\",\n        \"surname\": \"Peric\",\n        \"address\": \"Neka nepoznata ulica 28\",\n        \"phone\": \"+38165555444\",\n        \"email\": \"pperic@mail.com\",\n        \"username\": \"pperic\",\n        \"password\": \"pperic\",\n        \"salt\": \"hjk\",\n        \"registrationDate\": \"2020-06-18T12:54:59.000Z\"\n    },\n    {\n        \"userId\": 3,\n        \"forename\": \"Ana\",\n        \"surname\": \"Maric\",\n        \"address\": \"Studentska ulica 18\",\n        \"phone\": \"+381112345632\",\n        \"email\": \"amaric@mail.rs\",\n        \"username\": \"amaric\",\n        \"password\": \"amaric\",\n        \"salt\": \"jke\",\n        \"registrationDate\": \"2020-06-18T12:55:54.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add new user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Add new user - SUCCESS",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"forename\": \"Admin\",\r\n    \"surname\": \"Admin\",\r\n    \"email\": \"admin@admin.rs\",\r\n    \"phone\": \"+ADMIN123\",\r\n    \"address\": \"Admin Street 5\",\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12d-Jp4XQyegM61KHaPcM6Ei0++UDt8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 09:41:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"forename\": \"Admin\",\n    \"surname\": \"Admin\",\n    \"email\": \"admin@admin.rs\",\n    \"phone\": \"+ADMIN123\",\n    \"username\": \"admin\",\n    \"password\": \"C7AD44CBAD762A5DA0A452F9E854FDC1E0E7A52A38015F23F3EAB1D80B931DD472634DFAC71CD34EBC35D16AB7FB8A90C81F975113D6C7538DC69DD8DE9077EC\",\n    \"userId\": 4,\n    \"registrationDate\": \"2020-06-20T09:41:31.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get user by id -SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "232"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e8-6FuyJyt58ktVZRtQkPcblV5CYuE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 18:40:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 2,\n    \"forename\": \"Pera\",\n    \"surname\": \"Peric\",\n    \"address\": \"Neka nepoznata ulica 28\",\n    \"phone\": \"+38165555444\",\n    \"email\": \"pperic@mail.com\",\n    \"username\": \"pperic\",\n    \"password\": \"pperic\",\n    \"salt\": \"hjk\",\n    \"registrationDate\": \"2020-06-18T12:54:59.000Z\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsInVzZXJJZCI6NCwidXNlcm5hbWUiOiJhZG1pbiIsImV4dCI6MTU5Mzg4NzgzOC40NzQsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTI2NzgyMzh9.DWoSTchZfuHJTDLMuQpVtay0BWa1c7zkELB7dzAuUzg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "5d716706-3f4c-4b9e-aa1e-a9045c2c9f86",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e73d5af7-5a32-43d9-998e-d1e95f42d85f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Rentable",
+			"item": [
+				{
+					"name": "Get all reantables",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Get all reantables  - SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/rentable",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"rentable"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1719"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6b7-9w0uhck08v5MQJjRhCwHDYLwH20\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Jun 2020 09:39:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"rentableId\": 4,\n        \"maxCapacity\": 150,\n        \"wifi\": 1,\n        \"price\": \"60000.00\",\n        \"room\": null,\n        \"conferenceRoom\": {\n            \"conferenceRoomId\": 2,\n            \"area\": \"350.00\",\n            \"projector\": 1,\n            \"platform\": 1,\n            \"soundSystem\": 1,\n            \"rentableId\": 4\n        },\n        \"clients\": [\n            {\n                \"clientId\": 3,\n                \"forename\": \"Bos\",\n                \"surname\": \"Gazdic\",\n                \"email\": \"gazda@mail.rs\",\n                \"phone\": \"+3812232324\"\n            }\n        ]\n    },\n    {\n        \"rentableId\": 5,\n        \"maxCapacity\": 6,\n        \"wifi\": 0,\n        \"price\": \"398.00\",\n        \"room\": {\n            \"roomId\": 7,\n            \"numOfBeds\": 6,\n            \"bedType\": \"bunk_bed\",\n            \"balcony\": 0,\n            \"orientation\": \"south\",\n            \"floor\": 1,\n            \"closet\": 1,\n            \"hairdryer\": 0,\n            \"desk\": 0,\n            \"airConditioner\": 0,\n            \"roomNumber\": 102,\n            \"rentableId\": 5\n        },\n        \"conferenceRoom\": null,\n        \"clients\": [\n            {\n                \"clientId\": 1,\n                \"forename\": \"Perislav\",\n                \"surname\": \"Perislavljevic\",\n                \"email\": \"pperisa@mail.rs\",\n                \"phone\": \"+381651234567\"\n            }\n        ]\n    },\n    {\n        \"rentableId\": 1,\n        \"maxCapacity\": 50,\n        \"wifi\": 1,\n        \"price\": \"35000.00\",\n        \"room\": null,\n        \"conferenceRoom\": {\n            \"conferenceRoomId\": 1,\n            \"area\": \"50.00\",\n            \"projector\": 1,\n            \"platform\": 1,\n            \"soundSystem\": 1,\n            \"rentableId\": 1\n        },\n        \"clients\": []\n    },\n    {\n        \"rentableId\": 2,\n        \"maxCapacity\": 3,\n        \"wifi\": 1,\n        \"price\": \"550.00\",\n        \"room\": {\n            \"roomId\": 4,\n            \"numOfBeds\": 3,\n            \"bedType\": \"single\",\n            \"balcony\": 0,\n            \"orientation\": \"east\",\n            \"floor\": 1,\n            \"closet\": 1,\n            \"hairdryer\": 1,\n            \"desk\": 0,\n            \"airConditioner\": 0,\n            \"roomNumber\": 101,\n            \"rentableId\": 2\n        },\n        \"conferenceRoom\": null,\n        \"clients\": []\n    },\n    {\n        \"rentableId\": 3,\n        \"maxCapacity\": 2,\n        \"wifi\": 1,\n        \"price\": \"600.00\",\n        \"room\": {\n            \"roomId\": 5,\n            \"numOfBeds\": 1,\n            \"bedType\": \"king_size\",\n            \"balcony\": 1,\n            \"orientation\": \"west\",\n            \"floor\": 5,\n            \"closet\": 1,\n            \"hairdryer\": 1,\n            \"desk\": 1,\n            \"airConditioner\": 1,\n            \"roomNumber\": 501,\n            \"rentableId\": 3\n        },\n        \"conferenceRoom\": null,\n        \"clients\": []\n    },\n    {\n        \"rentableId\": 6,\n        \"maxCapacity\": 2,\n        \"wifi\": 0,\n        \"price\": \"400.00\",\n        \"room\": {\n            \"roomId\": 8,\n            \"numOfBeds\": 1,\n            \"bedType\": \"double\",\n            \"balcony\": 1,\n            \"orientation\": \"north\",\n            \"floor\": 3,\n            \"closet\": 0,\n            \"hairdryer\": 0,\n            \"desk\": 1,\n            \"airConditioner\": 1,\n            \"roomNumber\": 301,\n            \"rentableId\": 6\n        },\n        \"conferenceRoom\": null,\n        \"clients\": []\n    }\n]"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsInVzZXJJZCI6NiwidXNlcm5hbWUiOiJtaWxvamtvIiwiZXh0IjoxNTkzOTI5NzU4LjkxNiwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjUuMCIsImlhdCI6MTU5MjcyMDE1OH0.3TMhwpYCrKJ08bucdCtY7IKQrFC_8x2u_PNjcjyOR3A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0f98418e-d4ac-4062-8f6c-6b37b721d370",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e5c7b8aa-d279-4e01-8744-3d8c9552fae0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
