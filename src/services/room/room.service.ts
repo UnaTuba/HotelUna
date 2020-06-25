@@ -5,6 +5,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { ApiResponse } from "src/controllers/misc/api.response.class";
 import { RoomDto } from "src/dtos/room/room.dto";
+import { AddRoomDto } from "src/dtos/room/add.room.dto";
+import { Rentable } from "entities/rentable.entity";
+import { RentableService } from "../rentable/rentable.service";
+import { RentableDto } from "src/dtos/rentables/rentable.dto";
 
 @Injectable()
 export class RoomService extends TypeOrmCrudService<Room>{
@@ -102,5 +106,32 @@ export class RoomService extends TypeOrmCrudService<Room>{
 
         return rooms;
     }
+/*
+    async register(data: AddRoomDto): Promise<Room | ApiResponse> {
+       
+        const newRoom: Room = new Room();
+        newRoom.numOfBeds = data.numOfBeds;
+        newRoom.bedType = data.bedType;
+        newRoom.balcony = data.balcony;
+        newRoom.orientation = data.orientation;
+        newRoom.floor = data.floor;
+        newRoom.closet = data.closet;
+        newRoom.desk = data.desk;
+        newRoom.airConditioner = data.airConditioner;
+        newRoom.roomNumber = data.roomNumber;
+
+        try {
+            const savedRoom = await this.room.save(newRoom);
+
+            if (!savedRoom) {
+                throw new Error('');
+            }
+
+            return savedRoom;
+        } catch (e) {
+            return new ApiResponse('error', -6001, 'This room cannot be created.');
+        }
+    }
+    */
 
 }

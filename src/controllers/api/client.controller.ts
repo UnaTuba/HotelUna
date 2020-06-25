@@ -1,8 +1,7 @@
-import { Controller, Get, Param, Put, Body, Post, UseGuards } from "@nestjs/common";
+import { Controller, UseGuards } from "@nestjs/common";
 import { ClientService } from "../../services/client/client.service";
 import { Client } from "../../../entities/client.entity";
 import { Crud } from "@nestjsx/crud";
-import { AddClientDto } from "src/dtos/client/add.client.dto";
 import { RoleCheckerGuard } from "src/misc/role.checker.guard";
 import { AllowToRoles } from "src/misc/allow.to.roles.descriptor";
 

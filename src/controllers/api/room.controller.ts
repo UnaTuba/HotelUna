@@ -4,8 +4,9 @@ import { Room } from "entities/room.entity";
 import { RoomService } from "src/services/room/room.service";
 import { AllowToRoles } from "src/misc/allow.to.roles.descriptor";
 import { RoleCheckerGuard } from "src/misc/role.checker.guard";
-import { RoomDto } from "src/dtos/room/room.dto";
+import { AddRoomDto } from "src/dtos/room/add.room.dto";
 import { ApiResponse } from "../misc/api.response.class";
+import { RoomDto } from "src/dtos/room/room.dto";
 
 @Controller('api/room')
 @Crud({
@@ -75,5 +76,11 @@ export class RoomController{
     async search(@Body() data: RoomDto): Promise<Room | ApiResponse> {
         return await this.service.search(data);
     }
+/*
+    @Post('register') // POST http://localhost:3000/auth/room/register/
+    async userRegister(@Body() data: AddRoomDto) {
+        return await this.service.register(data);
+    }
+*/
     
 }
