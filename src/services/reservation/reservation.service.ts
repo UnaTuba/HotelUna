@@ -12,4 +12,13 @@ export class ReservationService extends TypeOrmCrudService<Reservation>{
     ){
             super(reservation);
     }
+/*
+    async createNewReservationForRoom(rentableId: number, clientId: number): Promise<Reservation> {
+        const newReservation: Reservation = new Reservation();
+        newReservation.rentableId = rentableId;
+        newReservation.clientId = clientId;
+        return await this.reservation.save(newReservation);
+    }
+*/
+    
 }
